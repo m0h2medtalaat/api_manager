@@ -1,7 +1,6 @@
 library api_manager;
 
-export 'package:api_manager/api_manager.dart';
-
+export 'src/apis_manager.dart';
 export 'src/models/message_response.dart';
 export 'src/models/mock/message_model_mock.dart';
 export 'src/models/request_model.dart';

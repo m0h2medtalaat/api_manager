@@ -1,5 +1,6 @@
 library api_manager;
 
+import 'package:api_manager/src/apis_manager.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -10,8 +11,8 @@ import 'models/message_response.dart';
 import 'models/response_model.dart';
 import 'request/base_request.dart';
 
-class APIsManager {
-  APIsManager() {
+class APIsManagerImpl implements APIsManager {
+  APIsManagerImpl() {
     _dio.interceptors
         .add(PrettyDioLogger(requestHeader: true, requestBody: true));
   }

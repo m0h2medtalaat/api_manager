@@ -7,14 +7,12 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'failure/enum.dart';
 import 'failure/failures.dart';
-import 'injection_container.dart' as di;
 import 'models/message_response.dart';
 import 'models/response_model.dart';
 import 'request/base_request.dart';
 
 class APIsManagerImpl implements APIsManager {
   APIsManagerImpl() {
-    di.init();
     _dio.interceptors
         .add(PrettyDioLogger(requestHeader: true, requestBody: true));
   }

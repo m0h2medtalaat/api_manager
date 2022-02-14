@@ -5,12 +5,16 @@ import 'api_manager_impl.dart';
 
 final di = GetIt.instance;
 
-void init() {
-  //! Core
+class ApiManagerDI {
+  ApiManagerDI(this.di) {
+    call();
+  }
 
-  di.registerLazySingleton<APIsManager>(
-    () => APIsManagerImpl(),
-  );
+  final GetIt di;
 
-  //! External
+  void call() {
+    di.registerLazySingleton<APIsManager>(
+      () => APIsManagerImpl(),
+    );
+  }
 }

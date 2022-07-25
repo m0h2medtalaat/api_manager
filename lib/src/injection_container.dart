@@ -13,8 +13,10 @@ class ApiManagerDI {
   final GetIt di;
 
   void call() {
-    di.registerLazySingleton<APIsManager>(
-      () => APIsManagerImpl(),
-    );
+    if (!di.isRegistered<APIsManager>()) {
+      di.registerLazySingleton<APIsManager>(
+            () => APIsManagerImpl(),
+      );
+    }
   }
 }

@@ -4,7 +4,9 @@ class MessageResponse extends ResponseModel {
   MessageResponse({required this.message});
 
   factory MessageResponse.fromMap(Map<String, dynamic> map) => MessageResponse(
-      message: map['message'] as String? ?? map['msg'] as String);
+      message: map['message'] as String? ??
+          map['msg'] as String? ??
+          map['status_description'] as String);
 
   final String message;
 
